@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: crash-loop
+spec:
+  containers:
+  - name: faulty-app
+    image: busybox
+    command: ["/bin/sh", "-c", "echo 'Crashed!'; sleep 5; exit 1"]
