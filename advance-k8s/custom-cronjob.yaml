@@ -1,0 +1,7 @@
+apiVersion: example.com/v1
+kind: CronJob
+metadata:
+  name: my-custom-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  command: ["echo", "Hello from custom cron job!"]

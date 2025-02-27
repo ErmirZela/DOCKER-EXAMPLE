@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: http-service
+spec:
+  containers:
+    - name: my-http-container
+      image: nginx
+      ports:
+        - containerPort: 80
+      livenessProbe:
+        httpGet:
+          path: /healthz  # Change this to match an actual endpoint
+          port: 80
+        initialDelaySeconds: 5
+        periodSeconds: 10
